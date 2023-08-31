@@ -1,6 +1,6 @@
 # Xadrez em Linha de Comando
 
-Projeto desenvolvido durante meus estudos em C#, foi feito na seção 13 do curso C# Completo, promovido pelo professor Nelio Alves.
+Projeto desenvolvido durante meus estudos em C#, foi feito na seção 12 do curso C# Completo, promovido pelo professor Nelio Alves.
 
 ## Descrição
 
