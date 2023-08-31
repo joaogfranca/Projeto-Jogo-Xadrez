@@ -73,6 +73,35 @@ namespace xadrez
                 mat[pos.Linha, pos.Coluna] = true;
             }
 
+            //roque
+            if(QtdMovimentos == 0 && !partida.Xeque)
+            {
+                //roque pequeno
+                Posicao posicaoTorre = new Posicao(posicao.Linha, posicao.Coluna + 3);
+                if (TesteTorreParaRoque(posicaoTorre))
+                {
+                    Posicao p1 = new Posicao(posicao.Linha, posicao.Coluna + 1);
+                    Posicao p2 = new Posicao(posicao.Linha, posicao.Coluna + 2);
+                    if(tab.peca(p1) == null && tab.peca(p2) == null)
+                    {
+                        mat[posicao.Linha, posicao.Coluna + 2] = true;
+                    }
+                }
+
+                //roque grande
+                Posicao posicaoTorre2 = new Posicao(posicao.Linha, posicao.Coluna - 4);
+                if (TesteTorreParaRoque(posicaoTorre2))
+                {
+                    Posicao p1 = new Posicao(posicao.Linha, posicao.Coluna - 1);
+                    Posicao p2 = new Posicao(posicao.Linha, posicao.Coluna - 2);
+                    Posicao p3 = new Posicao(posicao.Linha, posicao.Coluna - 3);
+                    if (tab.peca(p1) == null && tab.peca(p2) == null && tab.peca(p3) == null)
+                    {
+                        mat[posicao.Linha, posicao.Coluna - 2] = true;
+                    }
+                }
+            }
+
             return mat;
 
         }
@@ -81,6 +110,12 @@ namespace xadrez
         {
             Peca p = tab.peca(pos);
             return p == null || p.cor != cor;
+        }
+
+        private bool TesteTorreParaRoque(Posicao pos)
+        {
+            Peca p = tab.peca(pos);
+            return p != null && p is Torre && p.cor == cor && p.QtdMovimentos == 0;
         }
 
         public override string ToString()
