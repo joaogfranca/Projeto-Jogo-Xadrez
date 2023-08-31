@@ -16,7 +16,7 @@ A CLI envia e recebe informações sobre a partida, que é representada por uma 
 
 ### Instalação
 
-* Para testar o programa em sua máquina é bem simples, basta clonar o repositório e dar o start, ele é bem intuitivo e simples.
+* Para testar o programa em sua máquina é bem simples, basta clonar o repositório e dar o start, ele é bem intuitivo.
 
 ### Como funciona?
 
