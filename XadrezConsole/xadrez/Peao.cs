@@ -52,6 +52,21 @@ namespace xadrez
                 {
                     mat[pos.Linha, pos.Coluna] = true;
                 }
+
+                //en passant
+                if (posicao.Linha == 3)
+                {
+                    Posicao esquerda = new Posicao(posicao.Linha, posicao.Coluna - 1);
+                    if (tab.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && tab.peca(esquerda) == partida.VulneravelEnPassant)
+                    {
+                        mat[esquerda.Linha - 1, esquerda.Coluna] = true;
+                    }
+                    Posicao direita = new Posicao(posicao.Linha, posicao.Coluna + 1);
+                    if (tab.PosicaoValida(direita) && ExisteInimigo(direita) && tab.peca(direita) == partida.VulneravelEnPassant)
+                    {
+                        mat[direita.Linha - 1, direita.Coluna] = true;
+                    }
+                }
             }
             else
             {
@@ -74,6 +89,21 @@ namespace xadrez
                 if (tab.PosicaoValida(pos) && ExisteInimigo(pos))
                 {
                     mat[pos.Linha, pos.Coluna] = true;
+                }
+
+                //en passant
+                if (posicao.Linha == 4)
+                {
+                    Posicao esquerda = new Posicao(posicao.Linha, posicao.Coluna - 1);
+                    if (tab.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && tab.peca(esquerda) == partida.VulneravelEnPassant)
+                    {
+                        mat[esquerda.Linha + 1, esquerda.Coluna] = true;
+                    }
+                    Posicao direita = new Posicao(posicao.Linha, posicao.Coluna + 1);
+                    if (tab.PosicaoValida(direita) && ExisteInimigo(direita) && tab.peca(direita) == partida.VulneravelEnPassant)
+                    {
+                        mat[direita.Linha + 1, direita.Coluna] = true;
+                    }
                 }
             }
             return mat;
