@@ -27,9 +27,8 @@ A CLI envia e recebe informações sobre a partida, que é representada por uma 
 
 [@João França](https://www.linkedin.com/in/dev-joao-franca/)
 
-## Conhecimentos desenvolvidos
+## Conhecimentos desenvolvidos e utilizados
 
-Inspiration, code snippets, etc.
 * [C#](https://learn.microsoft.com/pt-br/dotnet/csharp/)
 * [Orientação a objetos](https://learn.microsoft.com/pt-br/dotnet/csharp/fundamentals/tutorials/oop)
 * [Visual Studio](https://visualstudio.microsoft.com/pt-br/vs/getting-started/)
